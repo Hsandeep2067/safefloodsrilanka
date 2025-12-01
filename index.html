@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flood Information - Sri Lanka</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-water"></i> FloodWatch SL</h1>
+                <p>Real-time Flood Information for Sri Lanka</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#map">Map</a></li>
+                    <li><a href="#areas">Affected Areas</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#news">News</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Stay Informed About Flood Situations in Sri Lanka</h2>
+            <p>Get real-time updates on flood-affected areas, safety measures, and emergency contacts</p>
+            <a href="#map" class="btn">View Flood Map</a>
+        </div>
+    </section>
+
+    <section id="map" class="map-section">
+        <div class="container">
+            <h2>Flood-Affected Areas Map</h2>
+            <div id="flood-map"></div>
+            <div class="map-legend">
+                <div class="legend-item">
+                    <div class="legend-color critical"></div>
+                    <span>Critical - Immediate danger</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color warning"></div>
+                    <span>Warning - Potential danger</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color alert"></div>
+                    <span>Alert - Stay informed</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="areas" class="affected-areas">
+        <div class="container">
+            <h2>Currently Affected Areas</h2>
+            <div class="area-grid">
+                <div class="area-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Colombo District</h3>
+                    <p class="status critical">Critical</p>
+                    <p>Severe flooding in multiple areas due to heavy monsoon rains. Evacuation advised for low-lying regions.</p>
+                    <p class="last-updated">Last updated: Today, 10:30 AM</p>
+                </div>
+                
+                <div class="area-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Kalutara District</h3>
+                    <p class="status warning">Warning</p>
+                    <p>Rising water levels in Kelani River. Residents in flood-prone areas should stay alert.</p>
+                    <p class="last-updated">Last updated: Today, 9:15 AM</p>
+                </div>
+                
+                <div class="area-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Ratnapura District</h3>
+                    <p class="status critical">Critical</p>
+                    <p>Kelani River overflowing. Evacuation advised for riverside communities. Road closures reported.</p>
+                    <p class="last-updated">Last updated: Today, 8:45 AM</p>
+                </div>
+                
+                <div class="area-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Kegalle District</h3>
+                    <p class="status alert">Alert</p>
+                    <p>Minor flooding reported after continuous rainfall. Agricultural areas affected.</p>
+                    <p class="last-updated">Last updated: Today, 7:20 AM</p>
+                </div>
+                
+                <div class="area-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Gampaha District</h3>
+                    <p class="status warning">Warning</p>
+                    <p>Waterlogging in urban areas. Drainage systems overwhelmed. Traffic disruptions reported.</p>
+                    <p class="last-updated">Last updated: Today, 6:45 AM</p>
+                </div>
+                
+                <div class="area-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Matara District</h3>
+                    <p class="status alert">Alert</p>
+                    <p>Coastal flooding risk due to high tides and heavy rainfall. Fishing communities advised to stay alert.</p>
+                    <p class="last-updated">Last updated: Today, 6:15 AM</p>
+                </div>
+                
+                <div class="area-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Hambantota District</h3>
+                    <p class="status warning">Warning</p>
+                    <p>Localized flooding reported in low-lying areas. Agricultural land affected.</p>
+                    <p class="last-updated">Last updated: Today, 5:30 AM</p>
+                </div>
+                
+                <div class="area-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Badulla District</h3>
+                    <p class="status alert">Alert</p>
+                    <p>Landslide risk due to heavy rainfall. Hill country roads slippery.</p>
+                    <p class="last-updated">Last updated: Today, 5:00 AM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="resources" class="resources">
+        <div class="container">
+            <h2>Emergency Resources</h2>
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>Emergency Hotlines</h3>
+                    <p>119 - Police Emergency</p>
+                    <p>118 - Fire & Rescue</p>
+                    <p>1990 - Disaster Management</p>
+                </div>
+                
+                <div class="resource-card">
+                    <i class="fas fa-hospital"></i>
+                    <h3>Medical Facilities</h3>
+                    <p>National Hospital - Colombo</p>
+                    <p>Lanka Hospitals - Colombo</p>
+                    <p>District Hospital - Ratnapura</p>
+                </div>
+                
+                <div class="resource-card">
+                    <i class="fas fa-home"></i>
+                    <h3>Evacuation Centers</h3>
+                    <p>Schools designated as shelters</p>
+                    <p>Community centers</p>
+                    <p>Temples and religious premises</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="news-section">
+        <div class="container">
+            <h2>Latest Flood News</h2>
+            <div class="news-content">
+                <div class="live-news">
+                    <h3>Live News Channels</h3>
+                    <div class="news-grid">
+                        <div class="news-card" data-channel="sirasa">
+                            <div class="channel-header sirasa">
+                                <h4><i class="fas fa-tv"></i> Sirasa TV</h4>
+                            </div>
+                            <div class="video-container">
+                                <div class="video-placeholder">
+                                    <p><i class="fas fa-broadcast-tower"></i></p>
+                                    <p>Access live coverage at:</p>
+                                    <p class="small"><a href="https://www.sirasa.lk" target="_blank" style="color: #fff; text-decoration: underline;">Sirasa.lk</a></p>
+                                    <p class="small">YouTube: <a href="https://www.youtube.com/live/CdfhDKknYuM?si=p4PXy7VjYT9f6NzF" target="_blank" style="color: #4fc3f7; text-decoration: underline;">Sirasa Live</a></p>
+                                </div>
+                            </div>
+                            <div class="channel-description">
+                                <p>Latest updates and news coverage from Sirasa TV</p>
+                            </div>
+                        </div>
+                        
+                        <div class="news-card" data-channel="derana">
+                            <div class="channel-header derana">
+                                <h4><i class="fas fa-tv"></i> Derana TV</h4>
+                            </div>
+                            <div class="video-container">
+                                <div class="video-placeholder">
+                                    <p><i class="fas fa-broadcast-tower"></i></p>
+                                    <p>Access live coverage at:</p>
+                                    <p class="small"><a href="https://www.derana.lk" target="_blank" style="color: #fff; text-decoration: underline;">Derana.lk</a></p>
+                                    <p class="small">YouTube: <a href="https://www.youtube.com/live/XNSKQaze0Wo?si=yRa46wzvtfCuHIbT" target="_blank" style="color: #4fc3f7; text-decoration: underline;">Derana Live</a></p>
+                                </div>
+                            </div>
+                            <div class="channel-description">
+                                <p>Breaking news and weather updates from Derana TV</p>
+                            </div>
+                        </div>
+                        
+                        <div class="news-card" data-channel="hiru">
+                            <div class="channel-header hiru">
+                                <h4><i class="fas fa-tv"></i> Hiru TV</h4>
+                            </div>
+                            <div class="video-container">
+                                <div class="video-placeholder">
+                                    <p><i class="fas fa-broadcast-tower"></i></p>
+                                    <p>Access live coverage at:</p>
+                                    <p class="small"><a href="https://www.hirunews.lk" target="_blank" style="color: #fff; text-decoration: underline;">HiruNews.lk</a></p>
+                                    <p class="small">YouTube: <a href="https://www.youtube.com/live/_IhN4E-SeaQ?si=HvF2K4PD6_gG2UpM" target="_blank" style="color: #4fc3f7; text-decoration: underline;">Hiru Live</a></p>
+                                </div>
+                            </div>
+                            <div class="channel-description">
+                                <p>Continuous news coverage from Hiru TV</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="news-updates">
+                    <h3>Recent Updates</h3>
+                    <div class="updates-list" id="dynamic-updates">
+                        <!-- Dynamic content will be loaded here -->
+                        <div class="loading">Loading latest updates...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3><i class="fas fa-water"></i> FloodWatch SL</h3>
+                    <p>Keeping Sri Lanka informed about flood situations</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#map">Map</a>
+                    <a href="#areas">Affected Areas</a>
+                    <a href="#resources">Resources</a>
+                    <a href="#news">News</a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 FloodWatch SL. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
