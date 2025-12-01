@@ -85,6 +85,7 @@ nav ul li a:hover {
 .hero h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
+    color: #4fc3f7; /* Light blue color */
 }
 
 .hero p {
